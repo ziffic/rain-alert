@@ -15,4 +15,8 @@ response = requests.get(OMW_Endpoint, params=parameter)
 response.raise_for_status()
 weather_data = response.json()
 
-print(weather_data)
+# print(weather_data)
+if weather_data["weather"][0]["id"] <= 700:
+    print("Bring an umbrella")
+else:
+    print("Enjoy the weather.")
