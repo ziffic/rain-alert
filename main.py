@@ -1,11 +1,11 @@
 import requests
+import connect
 
-api_key = "23ca05ea06f23b11598c6476ee4eb7c6"
 MY_LAT = 33.787914
 MY_LNG = -117.853104
 
 parameters = {
-    "api_key": api_key,
+    "api_key": connect.api_key,
     "lat": MY_LAT,
     "lon": MY_LNG
 }
