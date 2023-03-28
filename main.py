@@ -3,12 +3,16 @@ import connect
 
 MY_LAT = 33.787914
 MY_LNG = -117.853104
+OMW_Endpoint = "https://api.openweathermap.org/data/2.5/weather"
 
-weather_response = requests.get(url=f"https://api.openweathermap.org/data/2.5/weather?"
-                                    f"lat={MY_LAT}&"
-                                    f"lon={MY_LNG}&"
-                                    f"appid={connect.api_key}")
-weather_response.raise_for_status()
-weather_data = weather_response.json()
+parameter = {
+    "lat": MY_LAT,
+    "lon": MY_LNG,
+    "appid": connect.api_key
+}
+
+response = requests.get(OMW_Endpoint, params=parameter)
+response.raise_for_status()
+weather_data = response.json()
 
 print(weather_data)
