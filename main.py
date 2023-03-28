@@ -1,5 +1,7 @@
 import requests
 import connect
+import os
+from twilio.rest import Client
 
 MY_LAT = 33.787914
 MY_LNG = -117.853104
