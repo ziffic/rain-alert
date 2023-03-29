@@ -22,3 +22,16 @@ if weather_data["weather"][0]["id"] <= 700:
     print("Bring an umbrella")
 else:
     print("Enjoy the weather.")
+
+APP_ID = os.environ["TWILIO_ACCOUNT_SID"]
+API_KEY = os.environ["TWILIO_AUTH_TOKEN"]
+client = Client(connect.account_sid, connect.auth_token)
+
+message = client.messages \
+                .create(
+                     body="Test",
+                     from_='+18662711651',
+                     to='+17143231961'
+                 )
+
+# print(message.status)
